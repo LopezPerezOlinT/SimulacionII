@@ -1,0 +1,522 @@
+\documentclass[es-lat]{article}
+\usepackage[spanish, es-lcroman]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\usepackage{graphicx} % Required for inserting images
+
+\title{Formulario, Simulación II}
+\author{López Pérez Olin Tonatiuh}
+\date{May 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Definición función de densidad:}
+Una función de densidad de probabilidad caracteriza el comportamiento probable de una población en tanto especifica la posibilidad relativa de que una variable aleatoria continua \textbf{X} tome un valor cercano a $x$. Una variable aleatoria \textbf{X} tiene una función de densidad $f_X$ siendo $f_X$ una función no negativa integrable de Lebesgue.\smallskip
+
+$P[a\leq X\leq b]=\int_{a}^{b}fxdx$.\smallskip
+
+\noindent Si $\mathbf{F_X}$ es la función de distribución de $\mathbf{X}$, entonces,\smallskip
+
+$F_{X}(x)=\int_{-\infty }^{x}f_{X}(u)du$\smallskip
+
+\noindent y si $\mathbf{f_{X}}$ es continua en $\mathbf{x}$\smallskip
+
+$f_{X}(x)=\frac{x}{dx}F_{X}(x)$
+
+\section{Distribución uniforme:}
+
+\subsection{Notación:}
+Si \textbf{X} es una variable aleatoria continua con distribución uniforme se escribe $X\sim U(a,b)$ o $X\sim\text{Unif}(a,b)$.
+
+\subsection{Parámetros}
+
+$a,b\in\mathbb{R}, a<b$; $a$ es un parámetro de ubicación y $b-a$ es un parámetro de escala.
+
+\subsection{Rango}
+
+$[a,b]$
+
+\subsection{Media}
+
+$\frac{a+b}{2}$
+
+\subsection{Varianza}
+
+$\frac{(b-a)^2}{12}$
+
+\subsection{Función de densidad}
+
+$f_{X}(x)=\frac{1}{b-a}$, para $x\in [a,b]$
+
+\subsection{Función generadora de momentos}
+
+$\frac{e^{tb}-e^{ta}}{t(b-a)}$
+
+\section{Distribución normal}
+
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria con distribución normal se escribe $\mathbf{X\sim N(\mu,\sigma)}$ o $\mathbf{X\sim Normal(\mu,\sigma)}$
+
+\subsection{Parámetros}
+$\mu \epsilon \mathbb{R}, \sigma>0$
+
+\subsection{Rango}
+$x\epsilon\mathbb{R}$
+
+\subsection{Media}
+$\mu$
+
+\subsection{Varianza}
+$\sigma^2$
+
+\subsection{Función de densidad}
+$\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)}{2\sigma^2}}$
+
+\subsection{Función generadora de momentos}
+$M_{X}(t)=e^{\mu t+\frac{\sigma^{2}t^{2} }{2}}$
+
+\section{Distribución exponencial}
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria continua cuya distribución es normal se escribe $\mathbf{X\sim E(\lambda)}$ o $\mathbf{X\sim Exp(\lambda)}$
+
+\subsection{Parámetros}
+$\lambda>0$
+
+\subsection{Rango}
+$[0,\infty]$
+
+\subsection{Media}
+$\frac{1}{\lambda}$
+
+\subsection{Varianza}
+$\frac{1}{\lambda^{2}}$
+
+\subsection{Función de densidad}
+$F_{X}(x)=\lambda e^{-\lambda x}$
+
+\subsection{Función de distribución}
+$1- e^{-\lambda x}$
+
+\subsection{Función generadora de momentos}
+$(1-\frac{t}{\lambda})^{-1}$
+
+\section{Distribución Weibull}
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria continua se dice que $\mathbf{X}$ tiene una distribución de Weibull y se denota $\mathbf{X\sim Weibull(\alpha,\sigma)}$ o $\mathbf{X\sim W(\alpha,\sigma)}$
+
+\subsection{Parámetros}
+$\alpha,\sigma>0$
+
+\subsection{Rango}
+$x\epsilon(0,\infty)$
+
+\subsection{Media}
+$\frac{1}{\lambda}\Gamma(1+\frac{1}{\alpha})$
+
+\subsection{Varianza}
+$\frac{1}{\sigma^{2}}[\Gamma(1+\frac{2}{\alpha})-\Gamma^{2}(1+\frac{1}{\alpha})]$
+
+\subsection{Función de densidad}
+$\lambda\alpha(\lambda x)^{\alpha-1}e^{-(\lambda x)^{\alpha}}$
+
+\subsection{Función de distribución}
+>$1-e^{-(\lambda x)^{\alpha}}$
+
+\subsection{Función generadora de momentos}
+$\sum_{n=0}^{\infty}\frac{t^{n}}{n!\lambda^{n}}\Gamma(1+\frac{n}{\alpha}), \alpha\leq1$
+
+\section{Distribución Bernoulli}
+\subsection{Notación:}
+
+Sea $\mathbf{X}$ es una variable aleatoria discreta que mide el número de éxitos y se realiza un único experimento con dos posibles resultados denominados éxitos o fracaso se dice que la variable aleatoria $\mathbf{X}$ tiene una distribución de Bernoulli y se denota $\mathbf{X\sim Bernoulli(p)}$
+
+\subsection{Parámetros}
+$0<p<1$
+
+\subsection{Rango}
+$x\epsilon{0,1}$
+
+\subsection{Media}
+$p$
+
+\subsection{Varianza}
+$p(1-p)$
+
+\subsection{Función de densidad}
+$p^{x}(1-p)^{1-x}$
+
+\subsection{Función de distribución}
+$\begin{cases}
+  \begin{array}{@{}l@{\quad}l}
+    0 & \text{si } x < 0, \\
+    1-p & \text{si } 0 \leq  x < 1, \\
+    1 & \text{si } x \geq 1.
+  \end{array}
+\end{cases}$
+
+\subsection{Función generadora de momentos}
+$1-p+pe^{t}$
+
+\section{Distribución binomial}
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria discreta se dice que $\mathbf{X}$ tiene una distribución binomial y se denota $\mathbf{X\sim B(n,p)}$ 
+
+\subsection{Parámetros}
+$n\geq 0$ número de ensayos, $0\leq p\leq 1$ probabilidades de éxito 
+
+\subsection{Rango}
+$x\epsilon [0,1,...,n]$
+
+\subsection{Media}
+$np$
+
+\subsection{Varianza}
+$np(1-p)$
+
+\subsection{Función de densidad}
+$\binom{n}{x}p^{x}(1-p)^{n-x}$
+
+\subsection{Función de distribución}
+$I_{1-p}(n-\left \lfloor x \right \rfloor,\left \lfloor x \right \rfloor+1)$
+
+\subsection{Función generadora de momentos}
+$(1-p+pe^{t})^{n}$
+
+\section{Distribución geométrica}
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria discreta que sigue una distribución geométrica se escribe $\mathbf{X\sim Geometrica(p)}$ 
+
+\subsection{Parámetros}
+$0 \leq  x \leq 1$
+
+\subsection{Rango}
+$x\epsilon [1,2,...,)$
+
+\subsection{Media}
+$\frac{1}{p}$
+
+\subsection{Varianza}
+$\frac{(1-p)}{p^2}$
+
+\subsection{Función de densidad}
+$p(1-p)^{x-1}$
+
+\subsection{Función de distribución}
+$1-(1-p)^{x-1}$
+
+\subsection{Función generadora de momentos}
+$\frac{p}{1-(1-p)e^t}$
+
+\section{Distribución de Poisson}
+\subsection{Notación:}
+
+Si $\mathbf{X}$ es una variable aleatoria discreta se dice que $\mathbf{X}$ tiene una distribución de Poisson y se denota $\mathbf{X\sim P(\lambda)}$ o $\mathbf{X\sim Poi(\lambda)}$
+
+\subsection{Parámetros}
+$\lambda\epsilon(0, \infty)$ 
+
+\subsection{Rango}
+$k\epsilon [0,1,...)$
+
+\subsection{Media}
+$\lambda$
+
+\subsection{Varianza}
+$\lambda$
+
+\subsection{Función de densidad}
+$\frac{e^-{\lambda}\lambda^k}{k!}$
+
+\subsection{Función de distribución}
+$\frac{\Gamma (\left \lfloor k+1 \right \rfloor,\lambda)}{\left \lfloor k \right \rfloor!}$para $k\geq 0$ (donde $\Gamma (x,y)$ es la función gamma incompleta)
+
+\subsection{Función generadora de momentos}
+$exp(\lambda(e^t-1))$
+
+
+\newpage
+
+\section{Prueba de bondad de ajuste}
+\\La metodología es la siguiente:
+\\\\1-. Se colocan los n datos históricos en una tabla de frecuencias de $m = \sqrt{n}$ intervalos, se obtiene la frecuencia observada en cada intervalo $(FOi)$, se calcula la media y la varianza de los datos.
+\\\\2-. Se propone una distribución de probabilidad de acuerdo con la tabla de frecuencias obtenida en el paso 1.
+\\\\3-. Con la distribución propuesta, se calcula la frecuencia esperada para cada uno de los intervalos $(FEi)$ mediante la integración de la distribución propuesta y su posterior multiplicación por el número total de datos. 
+\[
+FEi= n\tfrac{1}{b-a} \int_{Lsup}^{Linf} \! f(x)  \,dx 
+\]
+\\4-. Se calcula el estimador 
+\[
+C=\sum_{i=1}^{m}\tfrac{(FEi-FOi)^2}{FEi}
+\]
+5-. Si $C\leq x^2$ correspondiente con $m-k-1$ grados de libertad $(k=$ número de parámetros estimados de la distribución) y a un nivel de confiabilidad $1- \alpha$, entonces no se puede rechazar la hipótesis de que los datos siguen la distribución propuesta.\\
+
+\section{Uso de los números aleatorios.}
+\subsection{Montecarlo de media muestral 1}
+\\\\1-. Se escoge aleatoriamente una semilla $X_{0}$
+\\\\2-.$X_{i+1}=(ax_{i}+b)mod(m)$
+\\\\3-. $U_{i}=X_{i+1}/m$
+
+\subsection{Montecarlo de media muestral 2}
+I: Cálculo de integrales.
+a) Para $\theta = \int_{0}^1 g(x)dx......(1)$ 
+\\\\Observamos que si $U \sim(0,1)$, podemos expresar (1) cómo 
+\[
+\theta= E[g(U)]
+\]
+\newpage
+\section{Prueba de Medias.}
+\\Verificamos que la media sea $\tfrac{1}{2}$
+\begin{align*} 
+H_{0} &:  \mu=\tfrac{1}{2} \\ 
+H_{2} &:  \mu \neq \tfrac{1}{2} \\ 
+\end{align*}
+Paso 1: Calcular la mediade los n números generados.
+\[
+\bar{x}=\tfrac{1}{n}\sum_{i=1}^{n}r_{i}
+\]
+Paso 2: Calcular los límites superior e inferior de aceptación.
+\begin{align*} 
+l_{sx} &=  \tfrac{1}{2} + z_{\tfrac{\alpha}{2}}\tfrac{1}{\sqrt{12n}} \\ 
+l_{ix} &=  \tfrac{1}{2} - z_{\tfrac{\alpha}{2}}\tfrac{1}{\sqrt{12n}} \\ 
+\end{align*}
+Paso 3 : Si $l_{ix}\leq x \leq l_{sx}$ aceptamos que los números tienen una media estadísticamente igual a $\tfrac{1}{2}$ con un nivel de aceptación $1-\alpha$
+
+
+
+\section{Prueba de Varianza.}
+\\\\Varianza & $\tfrac{{(b-a)}^2}{12}$\\
+
+\begin{align*} 
+H_{0} &=  V(x)=\tfrac{1}{12} \\ 
+H_{i} &=  V(x) \neq \tfrac{1}{12} \\ 
+\end{align*}
+Paso 1: Calcular la varianza de los n números generados.
+\[
+V(x)=\sum_{i=1}^{n}\tfrac{(r_{i}-\bar{x})^2}{n-1}
+\]
+Paso 2: Calcular los límites superior e inferior de aceptación.
+\begin{align*} 
+L_{sV(x)} &=  \tfrac{x^2_{\tfrac{\alpha}{2},n-1}}{12(n-1)}\\ 
+L_{sV(x)} &=  \tfrac{x^2_{1-\tfrac{\alpha}{2},n-1}}{12(n-1)}\\ 
+\end{align*}
+Paso 3 : Si $L_{iV(x)}\leq V(x) \leq L_{sV(x)}$ aceptamos la hipótesis nula y los números aleatorios tienen una varianza estadísticamente igual a $\tfrac{1}{12}$ con un nivel de aceptación $1-\alpha$\\\\
+
+\section{Prueba de uniformidad}
+\begin{align*} 
+H_{0} &:  r_{i} \sim U(0,1)\\ 
+H_{i} &:  r_{i} \text{ no son uniformes} \\ 
+\end{align*}
+La metodología es la prueba de bondad de ajuste de Chi-cuadrada
+
+
+
+
+\section{Prueba de Independencia.}
+\\Para Demostrar que los números generados son estadísticamente independientes entre si se propone la hipótesis
+
+\begin{align*} 
+H_{0} &:  r_{i} \sim independiente\\ 
+H_{i} &:  r_{i} - dependientes \\ 
+\end{align*}
+
+\\\\Pruebas de corridos.
+
+Paso 1: Clasificar cada número aleatorio con respecto al anterior, de acuerdo con .
+\begin{align*} 
+si &:  r_{i} \leq r_{i-1} & r_{i}= -\\ 
+H_{i} &:  r_{i} >r_{i-1} & r_{i} = + \\ 
+\end{align*}
+
+
+Paso 2: Calcular el número de corridos observados h. \\Una corrida se forma por un conjunto de números aleatorios consecutivos del mismo signo\\.
+
+Paso 3 : Calcular $E(h)$ y $V(h)$
+
+\begin{align*} 
+E(h) &=  \tfrac{2n-1}{3}\\ 
+V(h) &=  \tfrac{16n-29}{90}\\ 
+\end{align*}
+donde $n$ es el número de datos generados.\\
+
+\\\\Paso 4 : Calcular el estadístico $z=\tfrac{h-E(h)}{\sqrt{V(h)}}$
+si es menor que el valor crítico $z_{\tfrac{\alpha}{2}]}$ se acepta la hipótesis de independencia.
+
+
+
+
+
+
+\section{Prueba de corridas.}
+\\Son pruebas estadísticas no paramétricas para verificar la aleatoriedad de datos. Utiliza series de datos para decidir si son aleatorios o no.
+\\\\Paso 1 Contar el número de corridas en la secuencia de datos 
+\begin{align*} 
+H_{0} &:  La secuencia se produjo de forma aleatoria.\\ 
+H_{1} &:  La secuencia no se produjo de forma aleatoria.\\ 
+\end{align*}
+\\\\
+Paso 2: Usar el estadístico Z como prueba:
+
+\[
+Z &=  \tfrac{R-\bar{R}}{S_{R}}.\\ 
+\]
+\\Donde $R$ es el número de corridas observadas $\Bar{R}$, definido como:
+\[
+\Bar{R} &=  \tfrac{2n_{1}n_{2}}{n_{1}+n_{2}}+1.\\ 
+\]
+\\Con desviación estándar:
+\[
+S^2_{R} &=  \tfrac{2n_{1}n_{2}(2n_{1}n_{2}-n_{1}-n_{2})}{(n_{1}+n_{2})^2(n_{1}+n_{2}-1)}\\ 
+\]
+\\$n_{1}$ y $n_{2}$ son los números de valores positivos y negativos de la serie.
+\\\\Paso 3:
+Comparar el valor estadístico $Z$ calculado con el $Z_{critico}$ para un nivel de confianza dado ($Z_{critico}=1.96$ para un nivel de confianza del $95\%$) la hipótesis nula se rechaza, es decir, se declara que que los números no son aleatorios  si $|Z|>Z_{critico}$.  
+
+
+
+
+
+\section{Prueba de Kolmogorov-Smirnov.}
+\\Es recomendable para conjunto i pequeños $(i\leq30)$\\
+
+Paso 1: Ordenar de menor a mayor los números del conjunto $r_{i}$.
+\begin{align*} 
+r_{1}&\leq r_{2} \leq ...\leq r_{n}
+\end{align*}
+
+
+Paso 2: Determinar los valores de $D^+, D^-, D$ con las siguientes ecuaciones:
+\begin{align*} 
+D^+ &= \max_{{1<i<n}}  {(\tfrac{1}{n}<r_{i})}\\ 
+D^- &= \max_{{1<i<n}}  {(r_{i}-\frac{i-1}{n})}\\ 
+D &= max(D^+,D^-)\\ 
+\end{align*}
+
+Paso 3 : Determinar el valor critico $D_{\alpha,n}$ de la tabla de valores críticos de kolmogorov Smirnov para un grado de confianza $\alpha$ y tamaño de muestra $n$\\. 
+
+\\\\Paso 4 : Si  $D>D_{\alpha,n}$ se concluye que el conjunto $r_{i}$ no sigue una distribución uniforme, de lo contrario se acepta que sí la sigue\\\\.
+
+
+
+
+
+
+
+
+\section{Prueba de autocorrelación.}
+\\\\En esta prueba, dados los datos $x_{1}, x_{2}, x_{3},...,x_{n}$ se prueba la independencia de los datos, analizando los coeficientes de correlación, $r_{k}$, de $r_{1}$ de: 
+\\\\$x_{1}, x_{2}, x_{3},...,x_{n-1}$ con $x_{2}, x_{3},...,x_{n} $
+\\\\$r_{2}$ de: 
+\\\\$x_{1}, x_{2}, x_{3},...,x_{n-2}$ con $x_{2}, x_{3},...,x_{n} $
+\\\\...
+\\\\En general
+\\\\$r_{k}$ de: 
+\\\\$x_{1}, x_{2}, x_{3},...,x_{n-k}$ con $x_{k+1}, x_{k+2},...,x_{n} $
+\\\\Si los datos son independientes, se espera que $r_{k}$ sea poco significativo. Pero más que al cálculo de $r_{k}$ se usan pruebas estadísticas, como la de Ljung-Box.
+
+
+
+
+
+
+
+
+\section{Generación de variables aleatorias.}
+\subsection{distribución normal}
+\\Otra forma de generar números con distribución normal es mediante la aproximación
+
+\begin{align*} 
+x&= \tfrac{U^{0.135}-U(1-u)^{0.135}}{0.1975}
+\end{align*}
+
+\begin{align*} 
+\text{Generar } & U_{i},  i=1,...,12\\ 
+\text{Hacer } &  x=\sum_{i=1}^{12}u_{i}-6\\ 
+\text{Salida } & x
+\end{align*}
+
+Recordar que para generar la variable en distribución $F(x):$
+\begin{align*} 
+\text{Generar }  &U\sim U(0,1)\\ 
+\text{Hacer } &  x=F^{-1}(U)\\ 
+\text{Salida } & x
+\end{align*}
+
+\subsection{Teorema central del límite}
+Sean $\mathbf{X_{1},...,X_{n}}$ variables aleatorias idénticamente distribuidas con $E[X_{i}]$=$\mu$ y $Var(X_{i})=\sigma^2< \infty $ se define:
+
+\begin{center}
+$Z_{n}:= \frac{\sum_{i=1}^{n}X_{i}-n\mu}{\sigma\sqrt{n}}$
+
+\end{center}
+
+Entonces la función de distribución de $\mathbf{Z_{n}}$ converge hacía la función de distribución normal estándar cuando $n \to \infty $, es decir,
+
+\begin{center}
+    $\lim_{n\to\infty}P(Z_{n}\leq z)=\phi (z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^-{\frac{x^{2}}{2}}dx$
+\end{center}
+
+Es muy comun encontrarlo con la variable estandarizada de $\mathbf{Z_{n}}$ en función de la media muestral $\overline{X}$, es decir
+
+\begin{center}
+    $Z_{n}=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}$
+\end{center}
+
+Puesto que son equivalentes (solo se divide tanto numerador como denominador entre n). Es importante remarcar que este teorema no dice nada acerca de la distribución de la variable aleatoria $\mathbf{X_{i}}$, excepto la existencia de media y varianza.
+
+
+\subsection{Teorema del tamaño de muestra}
+El teorema del tamaño de muestra, también conocido como teorema de la precisión de la muestra, establece que para obtener una estimación de una cierta medida de interés con un error muestral máximo dado, se requiere una muestra de tamaño mínimo determinado, que depende de la varianza poblacional, el nivel de confianza y el margen de error deseado. Formalmente, se puede enunciar de la siguiente manera:
+
+Dado un nivel de confianza $1-\alpha$, un error muestral máximo $\epsilon$, y una variable aleatoria $X$ con varianza poblacional $\sigma^2$, entonces el tamaño mínimo de muestra $n$ necesario para estimar la media poblacional $\mu$ con un error muestral máximo $\epsilon$ y un nivel de confianza $1-\alpha$ está dado por:
+
+\begin{center}
+    $ n > \Bigg( \frac{2 \sigma z_{\alpha/2}}{\epsilon} \Bigg) ^2 $
+\end{center}
+
+donde $z_{\alpha/2}$ es el valor crítico de la distribución normal estándar que deja una probabilidad $\alpha/2$ en la cola superior.
+
+\subsection{Teorema de la suma Gaussiana}
+
+Sean $\mathbf{X}$ e $\mathbf{Y}$ variables aleatorias independientes con distribución normal, con medias $\mathbf{\mu_{1}}$ y $\mathbf{\mu_{2}}$ y varianzas $\mathbf{\sigma_{1}^2}$ y $\mathbf{\sigma_{2}^2}$, respectivamente. Entonces, las variables aleatorias $\mathbf{Z_{1} = X + Y}$ y $\mathbf{Z_{2} = X - Y}$ siguen una distribución normal con media $\mathbf{\mu_{z1} = \mu_{1} + \mu_{2}}$ y $\mathbf{\mu_{z2} = \mu_{1} - \mu_{2}}$, respectivamente, y varianza $\mathbf{\sigma_{z1}^2 = \sigma_{1}^2 + \sigma_{2}^2}$ y $\mathbf{\sigma_{z2}^2 = \sigma_{1}^2 + \sigma_{2}^2}$, respectivamente. Es decir:
+
+\begin{center}
+$\mathbf{Z_{1}\sim N(\mu_{z1},\sigma_{z1}^2)}$\\   
+$\mathbf{Z_{2}\sim N(\mu_{z1},\sigma_{z1}^2)}$
+\end{center}
+
+\section{Ley de los grandes números}
+
+Engloban varios teoremas que describen el comportamiento de promedio de una sucesión de variables aleatorias conforme aumenta su número de ensayos.
+
+\subsection{Ley débil}
+
+La ley débil de los grandes números establece que si $\mathbf{X_{1},X_{2},X_{3},...}$ es una sucesión infinita de variables aleatorias independientes que tiene el mismo valor esperado $\mathbf{\mu}$ y varianza $\mathbf{\sigma^2}$ entonces el promedio 
+
+\begin{center}
+    $\overline{X_{n}}=\frac{X_{1}+...+X_{n}}{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end{center}
+
+Converge en probabilidad a $\mathbf{\mu}$, en otras palabras para cualquier número $\mathbf{\varepsilon}$ se tiene
+
+\begin{center}
+    $\lim_{n \to \infty} P(\left | \overline{X}_{n}-\mu < \varepsilon \right |)=1$
+\end{center}
+
+\subsection{Ley fuerte}
+
+La ley fuerte de los grandes números establece que si $\mathbf{X_{1},X_{2},X_{3},...}$ es una sucesión infinita de variables aleatorias independientes e idénticamente distribuidas que cumplen $\mathbf{E[X_{i}]<\infty}$ y tienen valor esperado $E[X_{i}]=\mu$ entonces
+
+\begin{center}
+    $P(\lim_{n \to \infty}\overline{X}_{n}=\mu)=1$
+\end{center}
+\end{document}
